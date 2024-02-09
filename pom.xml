@@ -6,6 +6,13 @@
     <groupId>jpa-basic</groupId>
     <artifactId>ex1-hello-jpa</artifactId>
     <version>1.0.0</version>
+
+    <!-- Build Encoding UTF-8 Setting -->
+    <properties>
+        <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+        <project.reporting.outputEncoding>UTF-8</project.reporting.outputEncoding>
+    </properties>
+
     <dependencies>
         <!-- JPA 하이버네이트 -->
         <dependency>
