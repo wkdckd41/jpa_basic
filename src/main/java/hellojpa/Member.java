@@ -1,4 +1,5 @@
 package hellojpa;
+import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
 
@@ -7,6 +8,8 @@ public class Member {
 
     @Id
     private Long id;
+
+    @Column(unique = true, length = 10) // 유니크 제약조건 추가 DDL 생성 기능은 DDL을 자동 생성할 때만 사용된다
     private String name;
 
     public Member() {
