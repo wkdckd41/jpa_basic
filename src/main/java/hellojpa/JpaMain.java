@@ -17,16 +17,13 @@ public class JpaMain {
 
         try {
 
-            //준영속
-            Member member = em.find(Member.class, 150L);
-            member.setName("AAAAA");
+            Member member = new Member();
+            member.setId(3L);
+            member.setUsername("C");
+            member.setRoleType(RoleType.GUEST);
 
-//            em.detach(member); 특정 엔티티만 준영속상태 전환
-            em.clear(); // 영속성 컨텍스트를 완전히 초기화
+            em.persist(member);
 
-            Member member2 = em.find(Member.class, 150L);
-
-            System.out.println("=======================================================================");
             tx.commit();
         } catch (Exception e) {
             tx.rollback();
