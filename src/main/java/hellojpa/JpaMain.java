@@ -16,28 +16,29 @@ public class JpaMain {
 
         try {
 
-            Member member1 = new Member();
-            member1.setUsername("A");
+            //팀 저장
+            Team team = new Team();
+            team.setName("TeamA");
+            em.persist(team);
 
-            Member member2 = new Member();
-            member2.setUsername("B");
+            Member member = new Member();
+            member.setUsername("member1");
+            member.setTeam(team);
+            em.persist(member);
 
-            Member member3 = new Member();
-            member3.setUsername("C");
+            em.flush(); //강제로 DB에 쿼리를 날림
+            em.clear(); //영속성 컨텍스트를 초기화
 
-            System.out.println("===========================");
+            //조회
+            Member findMember = em.find(Member.class, member.getId());
 
-            em.persist(member1); //1, 51
-            em.persist(member2); //MEM
-            em.persist(member3); //MEM
+            Team findTeam = findMember.getTeam(); // 객체 그래프 탐색
+            System.out.println("findTeam = " + findTeam.getName());
 
-            System.out.println("member1 = " + member1.getId());
-            System.out.println("member2 = " + member2.getId());
-            System.out.println("member3 = " + member3.getId());
+            Team newTeam = em.find(Team.class, 100L); // 새로운 팀을 조회
+            findMember.setTeam(newTeam); //연관관계 수정
 
-            System.out.println("============================");
-
-            tx.commit();
+            tx.commit(); //트랜잭션 커밋
         } catch (Exception e) {
             tx.rollback();
         } finally {
