@@ -15,8 +15,8 @@ public class Member {
 //    @Column(name = "TEAM_ID")
 //    private Long teamId;
 
-    @ManyToOne
-    @JoinColumn(name = "TEAM_ID")
+    @ManyToOne // 다대일 관계
+    @JoinColumn(name = "TEAM_ID") // 외래키를 매핑할 때 사용
     private Team team;
 
     public Team getTeam() {

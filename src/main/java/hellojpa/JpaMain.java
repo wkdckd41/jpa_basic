@@ -4,6 +4,7 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
+import java.util.List;
 
 public class JpaMain {
 
@@ -30,13 +31,12 @@ public class JpaMain {
             em.clear(); //영속성 컨텍스트를 초기화
 
             //조회
-            Member findMember = em.find(Member.class, member.getId());
+            Member findMember = em.find(Member.class, member.getId()); //영속성 컨텍스트에 있는지 확인
+            List<Member> members = findMember.getTeam().getMembers(); //팀에 있는 멤버들을 가져옴
 
-            Team findTeam = findMember.getTeam(); // 객체 그래프 탐색
-            System.out.println("findTeam = " + findTeam.getName());
-
-            Team newTeam = em.find(Team.class, 100L); // 새로운 팀을 조회
-            findMember.setTeam(newTeam); //연관관계 수정
+            for (Member m : members) {
+                System.out.println("m = " + m.getUsername());
+            }
 
             tx.commit(); //트랜잭션 커밋
         } catch (Exception e) {
