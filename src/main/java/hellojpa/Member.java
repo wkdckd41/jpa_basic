@@ -23,8 +23,9 @@ public class Member {
         return team;
     }
 
-    public void setTeam(Team team) {
+    public void changeTeam(Team team) {
         this.team = team;
+        team.getMembers().add(this); // 양방향 연관관계 설정
     }
 
     public Long getId() {

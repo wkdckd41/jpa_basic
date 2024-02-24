@@ -24,15 +24,14 @@ public class JpaMain {
 
             Member member = new Member();
             member.setUsername("member1");
-            member.setTeam(team);
-            em.persist(member);
+            member.changeTeam(team); //단방향 연관관계 설정, 참조 저장
+            em.persist(team);
 
             em.flush(); //강제로 DB에 쿼리를 날림
             em.clear(); //영속성 컨텍스트를 초기화
 
-            //조회
-            Member findMember = em.find(Member.class, member.getId()); //영속성 컨텍스트에 있는지 확인
-            List<Member> members = findMember.getTeam().getMembers(); //팀에 있는 멤버들을 가져옴
+            Team findTeam = em.find(Team.class, team.getId());//영속성 컨텍스트에 있는지 확인
+            List<Member> members = findTeam.getMembers(); //팀에 있는 멤버들을 가져옴
 
             for (Member m : members) {
                 System.out.println("m = " + m.getUsername());
