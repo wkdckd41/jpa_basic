@@ -13,7 +13,7 @@ public class Member {
     private String username;
 
     @ManyToOne // 다대일 관계
-    @JoinColumn(name = "TEAM_ID") // 외래키를 매핑할 때 사용
+    @JoinColumn(name = "TEAM_ID", insertable = false, updatable = false) // 읽기 전용으로 설정
     private Team team;
 
     public Long getId() {
@@ -32,11 +32,4 @@ public class Member {
         this.username = username;
     }
 
-    public Team getTeam() {
-        return team;
-    }
-
-    public void setTeam(Team team) {
-        this.team = team;
-    }
 }

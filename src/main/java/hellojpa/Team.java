@@ -2,6 +2,7 @@ package hellojpa;
 
 import javax.persistence.*;
 import java.util.ArrayList;
+import java.util.Collection;
 import java.util.List;
 
 @Entity
@@ -12,8 +13,9 @@ public class Team {
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "team") // 양방향 매핑
-    private List<Member> members = new ArrayList<>(); //   양방향 매핑을 위한 필드 추가
+    @OneToMany
+    @JoinColumn(name = "TEAM_ID") // Member 테이블에 있는 TEAM_ID 외래키를 사용하겠다.
+    private List<Member> members = new ArrayList<>();
 
     public Long getId() {
         return id;
@@ -29,5 +31,9 @@ public class Team {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public Collection<Member> getMembers() {
+        return members;
     }
 }
