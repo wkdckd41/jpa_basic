@@ -12,16 +12,8 @@ public class Team {
     private Long id;
     private String name;
 
-    @OneToMany(mappedBy = "team") // mappedBy는 연관관계의 주인이 아니다. 읽기 전용이다. 따라서 읽기만 가능하다.
-    private List<Member> members = new ArrayList<>(); // 컬렉션은 필드에서 초기화하는 것이 안전하다.
-
-    public List<Member> getMembers() {
-        return members;
-    }
-
-    public void setMembers(List<Member> members) {
-        this.members = members;
-    }
+    @OneToMany(mappedBy = "team") // 양방향 매핑
+    private List<Member> members = new ArrayList<>(); //   양방향 매핑을 위한 필드 추가
 
     public Long getId() {
         return id;

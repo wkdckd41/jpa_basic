@@ -12,21 +12,9 @@ public class Member {
     @Column(name ="USERNAME")
     private String username;
 
-//    @Column(name = "TEAM_ID")
-//    private Long teamId;
-
     @ManyToOne // 다대일 관계
     @JoinColumn(name = "TEAM_ID") // 외래키를 매핑할 때 사용
     private Team team;
-
-    public Team getTeam() {
-        return team;
-    }
-
-    public void changeTeam(Team team) {
-        this.team = team;
-        team.getMembers().add(this); // 양방향 연관관계 설정
-    }
 
     public Long getId() {
         return id;
@@ -44,4 +32,11 @@ public class Member {
         this.username = username;
     }
 
+    public Team getTeam() {
+        return team;
+    }
+
+    public void setTeam(Team team) {
+        this.team = team;
+    }
 }
