@@ -20,19 +20,18 @@ public class JpaMain {
             movie.setDirector("aaaa");
             movie.setActor("bbb");
             movie.setName("바람과함께사라지다");
-            movie.setPrice(10000);
 
             em.persist(movie);
 
             em.flush();
             em.clear();
 
-            Movie findMovie = em.find(Movie.class, movie.getId());
-            System.out.println("findMovie = " + findMovie);
+            Item item = em.find(Item.class, movie.getId());
+            System.out.println("item = " + item);
 
             tx.commit(); //트랜잭션 커밋
-        } catch (Exception e) {
-            tx.rollback();
+        } catch (Exception e) { //예외 처리
+            tx.rollback(); //트랜잭션 롤백
         } finally {
             em.close(); //영속성 컨텍스트를 종료
         }
