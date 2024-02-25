@@ -127,3 +127,8 @@ Q.idea/sonarlint/securityhotspotstore/c/4/c4af432b135f03c2a4c9f9d051cd1fdc46a0db
 Q.idea/sonarlint/securityhotspotstore/a/4/a4391509211593d8da1a71fee67f56a7ae6f15a5,1\7\17c7c691d98240a7add93b6296f3c6fceb2a804e
 Å
 Q.idea/sonarlint/securityhotspotstore/a/f/af15c104827213683c88a766fa457595b506bacb,f\9\f9326db31fa402e442490e7f53a19631c54a81f0
+7
+pom.xml,4\4\442292b8a7efeabbe4cc176709b833b1792140ec
+:
+
+.gitignore,a\5\a5cc2925ca8258af241be7e5b0381edf30266302
