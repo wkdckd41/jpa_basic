@@ -12,8 +12,11 @@ public class Member extends BaseEntity{
     @Column(name ="USERNAME")
     private String username;
 
-    @ManyToOne // 다대일 관계
-    @JoinColumn(name = "TEAM_ID", insertable = false, updatable = false) // 읽기 전용으로 설정
+
+//    @ManyToOne(fetch = FetchType.EAGER) // 즉시 로딩 // 즉시 로딩은 예상하지 못한 SQL이 발생할 수 있다. 실무에서 사용X
+//    // 즉시 로딩은 JPQL에서 N+1문제가 발생할 수 있다.
+    @ManyToOne(fetch = FetchType.LAZY) // 지연 로딩
+    @JoinColumn
     private Team team;
 
     public Long getId() {
@@ -36,4 +39,7 @@ public class Member extends BaseEntity{
         return team;
     }
 
+    public void setTeam(Team team) {
+        this.team = team;
+    }
 }
