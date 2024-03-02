@@ -4,7 +4,6 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.EntityTransaction;
 import javax.persistence.Persistence;
-import java.util.List;
 
 public class JpaMain {
 
@@ -17,32 +16,20 @@ public class JpaMain {
 
         try {
 
-            Team team = new Team();
-            team.setName("teamA");
-            em.persist(team);
+            Child child1 = new Child();
+            Child child2 = new Child();
 
-            Team teamB = new Team();
-            teamB.setName("teamB");
-            em.persist(teamB);
+            Parent parent = new Parent();
+            parent.addChild(child1);
+            parent.addChild(child2);
 
-            Member member1 = new Member();
-            member1.setUsername("member1");
-            member1.setTeam(team);
-            em.persist(member1);
-
-            Member member2 = new Member();
-            member1.setUsername("member2");
-            member1.setTeam(teamB);
-            em.persist(member2);
+            em.persist(parent);
 
             em.flush();
             em.clear();
 
-//            Member m = em.find(Member.class, member1.getId());
-
-            List<Member> members = em.createQuery("select m from Member m join fetch m.team", Member.class)
-                    .getResultList();
-
+            Parent findParent = em.find(Parent.class, parent.getId()); // 부모 엔티티 조회
+            findParent.getChildList().remove(0); // 첫 번째 자식 엔티티 제거
             tx.commit(); //트랜잭션 커밋
         } catch (Exception e) { //예외 처리
             tx.rollback(); //트랜잭션 롤백

@@ -581,3 +581,7 @@ w
 G.idea/sonarlint/issuestore/e/c/ec83f15c87ddd314f293d09677bbb28c5d4bb53e,9\c\9c40a78b37cc5e3432bab7912866a3414ca1fa49
 w
 G.idea/sonarlint/issuestore/e/c/ec9ede9399d8f48def94be4fc0e5f40f5a3115af,c\c\ccb61b81bc7eada77a1d9abb4db85cbfa191404c
+R
+"src/main/java/hellojpa/Parent.java,4\4\44edf2283231ef941ed7d9f231ed01b376d49e57
+Q
+!src/main/java/hellojpa/Child.java,4\8\48d6c9fed6f1a2e54a6a3560ffb4d0f8d7b9aa18

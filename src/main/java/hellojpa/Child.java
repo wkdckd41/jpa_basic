@@ -1,23 +1,19 @@
 package hellojpa;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
-public class Product {
+public class Child {
 
-    @Id @GeneratedValue
+    @Id
+    @GeneratedValue
     private Long id;
 
     private String name;
 
     @ManyToOne
-    @JoinColumn(name = "MEMBER_ID")
-    private Member member;
-
-    @OneToMany(mappedBy = "product")
-    private List<MemberProduct> memberProducts = new ArrayList<>();
+    @JoinColumn(name = "PARENT_ID")
+    private Parent parent;
 
     public Long getId() {
         return id;
@@ -33,5 +29,9 @@ public class Product {
 
     public void setName(String name) {
         this.name = name;
+    }
+
+    public void setParent(Parent parent) {
+        this.parent = parent;
     }
 }

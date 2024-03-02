@@ -1,6 +1,8 @@
 package hellojpa;
 
 import javax.persistence.*;
+import java.util.ArrayList;
+import java.util.List;
 
 @Entity
 public class Member extends BaseEntity{
@@ -18,6 +20,9 @@ public class Member extends BaseEntity{
     @ManyToOne(fetch = FetchType.LAZY) // 지연 로딩
     @JoinColumn
     private Team team;
+
+    @OneToMany(mappedBy = "member")
+    private List<Product> products = new ArrayList<>();
 
     public Long getId() {
         return id;
