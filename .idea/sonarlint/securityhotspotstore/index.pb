@@ -11,8 +11,6 @@ R
 "src/main/java/hellojpa/Member.java,f\d\fd68fd8c0388b07c61445afa503c8ec018eab4c0
 Y
 )src/main/java/hellojpa/MemberProduct.java,4\4\44c1b4a465ff3c033de64e5c746bd23b1c60bd17
-R
-"src/main/java/hellojpa/Locker.java,4\7\4746643b525b7683f7bd87c9f4f12112f1a6193f
 Q
 !src/main/java/hellojpa/Movie.java,5\d\5d01fa8f7a9d9e79f69c3c4484557bbb877c2f6f
 P
@@ -45,8 +43,6 @@ Q.idea/sonarlint/securityhotspotstore/f/d/fd68fd8c0388b07c61445afa503c8ec018eab4
 Q.idea/sonarlint/securityhotspotstore/7/1/717b091188e01e3e76c32796a05a5f0b7e165ec4,7\5\756bb60b38f912f2975d0b29b0d9c166bf635e29
 Å
 Q.idea/sonarlint/securityhotspotstore/9/7/978a85b417eb31c6aef1282acb782910acfded2c,a\f\af15c104827213683c88a766fa457595b506bacb
-Å
-Q.idea/sonarlint/securityhotspotstore/4/7/4746643b525b7683f7bd87c9f4f12112f1a6193f,5\6\565fb483474ebc64ff54be110f7e637ebadd411e
 ]
 -.idea/sonarlint/securityhotspotstore/index.pb,8\8\88a9255124c95bdc913197c120a8d560edc59c8e
 Å
@@ -585,3 +581,5 @@ R
 "src/main/java/hellojpa/Parent.java,4\4\44edf2283231ef941ed7d9f231ed01b376d49e57
 Q
 !src/main/java/hellojpa/Child.java,4\8\48d6c9fed6f1a2e54a6a3560ffb4d0f8d7b9aa18
+U
+%src/main/java/hellojpa/ValueMain.java,1\4\148f6c5da2041fc73bae5e8e1260a522686ae1fc
