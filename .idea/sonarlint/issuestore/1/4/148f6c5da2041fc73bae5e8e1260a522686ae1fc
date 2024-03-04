@@ -1,0 +1,8 @@
+
+]	java:S125"<This block of commented-out lines of code should be removed.(ÆÜØ¾ûÿÿÿÿ8¤¯¦à1
+C
+java:S2129"!Remove this "Integer" constructor(ÁÏ¤ˆüÿÿÿÿ8äû¯¦à1
+Q
+java:S1874"/Remove this use of "Integer"; it is deprecated.(ÁÏ¤ˆüÿÿÿÿ8çû¯¦à1
+L	java:S106"+Replace this use of System.out by a logger.(ŞªìÈÿÿÿÿÿ8µæ¢¦à1
+G	java:S106"+Replace this use of System.out by a logger.(‘ÙëÚ8‰Œ£¦à1

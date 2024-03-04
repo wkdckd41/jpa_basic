@@ -16,24 +16,17 @@ public class JpaMain {
 
         try {
 
-            Child child1 = new Child();
-            Child child2 = new Child();
+            Member member = new Member();
+            member.setUsername("member1");
+            member.setHomeAddress(new Address("city1", "street", "10000"));
+            member.setWorkPeriod(new Period());
 
-            Parent parent = new Parent();
-            parent.addChild(child1);
-            parent.addChild(child2);
+            em.persist(member); //영속성 컨텍스트에 저장
 
-            em.persist(parent);
-
-            em.flush();
-            em.clear();
-
-            Parent findParent = em.find(Parent.class, parent.getId()); // 부모 엔티티 조회
-            findParent.getChildList().remove(0); // 첫 번째 자식 엔티티 제거
             tx.commit(); //트랜잭션 커밋
         } catch (Exception e) { //예외 처리
             tx.rollback(); //트랜잭션 롤백
-            e.printStackTrace();
+            e.printStackTrace(); //예외 출력
         } finally {
             em.close(); //영속성 컨텍스트를 종료
         }

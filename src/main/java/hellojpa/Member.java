@@ -1,8 +1,6 @@
 package hellojpa;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.List;
 
 @Entity
 public class Member extends BaseEntity{
@@ -14,15 +12,19 @@ public class Member extends BaseEntity{
     @Column(name ="USERNAME")
     private String username;
 
+    @Embedded
+    private Period workPeriod;
 
-//    @ManyToOne(fetch = FetchType.EAGER) // 즉시 로딩 // 즉시 로딩은 예상하지 못한 SQL이 발생할 수 있다. 실무에서 사용X
-//    // 즉시 로딩은 JPQL에서 N+1문제가 발생할 수 있다.
-    @ManyToOne(fetch = FetchType.LAZY) // 지연 로딩
-    @JoinColumn
-    private Team team;
+    @Embedded
+    private Address homeAddress;
 
-    @OneToMany(mappedBy = "member")
-    private List<Product> products = new ArrayList<>();
+    @Embedded
+    @AttributeOverrides({// 같은 값이면 생략 가능
+            @AttributeOverride(name = "city", column = @Column(name = "WORK_CITY")),
+            @AttributeOverride(name = "street", column = @Column(name = "WORK_STREET")),
+            @AttributeOverride(name = "zipcode", column = @Column(name = "WORK_ZIPCODE"))
+    })
+    private Address workAddress;
 
     public Long getId() {
         return id;
@@ -40,11 +42,19 @@ public class Member extends BaseEntity{
         this.username = username;
     }
 
-    public Team getTeam() {
-        return team;
+    public Period getWorkPeriod() {
+        return workPeriod;
     }
 
-    public void setTeam(Team team) {
-        this.team = team;
+    public void setWorkPeriod(Period workPeriod) {
+        this.workPeriod = workPeriod;
+    }
+
+    public Address getHomeAddress() {
+        return homeAddress;
+    }
+
+    public void setHomeAddress(Address homeAddress) {
+        this.homeAddress = homeAddress;
     }
 }
