@@ -4,17 +4,16 @@ public class ValueMain {
 
     public static void main(String[] args) {
 
-//        int a = 10;
-//        int b = 10;
+        int a = 10;
+        int b = 10;
 
-//        b = 20; // b의 값을 변경해도 a의 값은 변경되지 않는다.
+        System.out.println("a == b: " + (a == b));
 
-        Integer a = new Integer(10);
-        Integer b = a;
+        Address address1 = new Address("city1", "street", "10000");
+        Address address2 = new Address("city1", "street", "10000");
 
-//        b.setValue(20); // b의 값을 변경하면 a의 값도 변경된다.
+        System.out.println("address1 == address2: " + (address1 == address2));
+        System.out.println("address1 equals address2: " + (address1.equals(address2)));
 
-        System.out.println("a = " + a);
-        System.out.println("b = " + b);
     }
 }
