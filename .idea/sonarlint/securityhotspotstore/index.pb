@@ -1203,3 +1203,5 @@ Q.idea/sonarlint/securityhotspotstore/7/2/72bdacd722f729097abe2464bfcac0491a34d5
 Q.idea/sonarlint/securityhotspotstore/7/d/7d7b97ddb6c5aeb54813bc5484974f5d60bdd8fb,4\a\4ac6394955181a2f2f0773baa233d7af7b53425c
 Å
 Q.idea/sonarlint/securityhotspotstore/7/0/7001e9040f42053505132028f11138cca58cb535,1\7\172badb7707eed675c3e4a665b9f60f0220ef0b7
+Y
+)src/main/java/hellojpa/AddressEntity.java,2\8\288dd2a061bd2aef4a50d3ec6f052bc0991950b2
