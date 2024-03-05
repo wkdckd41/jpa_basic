@@ -64,8 +64,6 @@ Q.idea/sonarlint/securityhotspotstore/1/c/1c36a2ba9608ba51df93d83db5bb627f9d4391
 w
 G.idea/sonarlint/issuestore/5/5/55a3121684c9e89548c48a9a0314159f6d081d46,3\f\3f2f6c9bc9a2e1387ee09e942b07ea25ec734ce3
 w
-G.idea/sonarlint/issuestore/5/6/565fb483474ebc64ff54be110f7e637ebadd411e,d\9\d97deddb9958e5c1d4bc4b8b6027098003801026
-w
 G.idea/sonarlint/issuestore/4/c/4ce0196a79222f440615c0eea25b5b04911bf264,7\5\75a88496c8ae499776557abedce49126bc9f6020
 w
 G.idea/sonarlint/issuestore/3/f/3f52d3e3d0e523fb54e82bc7931ce3b3bd7e3fbf,6\b\6b462517da95ec33d83bc608bb7c4f32c4841218
@@ -99,8 +97,6 @@ Q.idea/sonarlint/securityhotspotstore/b/7/b7dc2270f1d5dc97d0cdb28177f4a8946af2e0
 Q.idea/sonarlint/securityhotspotstore/5/5/55a3121684c9e89548c48a9a0314159f6d081d46,a\9\a9b060515c9a5e1171f671e27b997887549b78fe
 w
 G.idea/sonarlint/issuestore/a/f/af15c104827213683c88a766fa457595b506bacb,2\f\2f51cd043b0df3fe1d317426b1d29f4248b9ae6b
-Å
-Q.idea/sonarlint/securityhotspotstore/5/6/565fb483474ebc64ff54be110f7e637ebadd411e,5\6\56669842957329378f4c7b8430c896c5a60bdefc
 w
 G.idea/sonarlint/issuestore/8/8/88a9255124c95bdc913197c120a8d560edc59c8e,a\e\ae9ddf453f55affea2d6b9e3973cac1eb2efb4e1
 w
@@ -583,8 +579,6 @@ Q
 !src/main/java/hellojpa/Child.java,4\8\48d6c9fed6f1a2e54a6a3560ffb4d0f8d7b9aa18
 U
 %src/main/java/hellojpa/ValueMain.java,1\4\148f6c5da2041fc73bae5e8e1260a522686ae1fc
-T
-$src/main/java/hellojpa/Adrdress.java,a\9\a9d77c6e87b1fa3aac877ef84f314678e064aec1
 S
 #src/main/java/hellojpa/Address.java,e\d\ed0ba483127da0c1ee616e1633db429d81762845
 R

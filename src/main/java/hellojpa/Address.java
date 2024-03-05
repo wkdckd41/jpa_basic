@@ -13,6 +13,9 @@ public class Address {
     }
 
     public Address(String city1, String street, String number) {
+        this.city = city1;
+        this.street = street;
+        this.zipcode = number;
     }
 
     public String getCity() {

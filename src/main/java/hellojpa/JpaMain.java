@@ -15,13 +15,15 @@ public class JpaMain {
         tx.begin();
 
         try {
+            Address address = new Address("city1", "street", "10000");
 
             Member member = new Member();
             member.setUsername("member1");
-            member.setHomeAddress(new Address("city1", "street", "10000"));
-            member.setWorkPeriod(new Period());
-
+            member.setHomeAddress(address);
             em.persist(member); //영속성 컨텍스트에 저장
+
+            Address newAddress = new Address("NewCity", address.getStreet(), address.getZipcode());
+            member.setHomeAddress(newAddress); //값 타입은 변경이 가능하다.
 
             tx.commit(); //트랜잭션 커밋
         } catch (Exception e) { //예외 처리
