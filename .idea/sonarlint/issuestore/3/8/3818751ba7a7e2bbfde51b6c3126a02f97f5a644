@@ -1,9 +1,4 @@
 
-d
-java:S1192"GDefine a constant instead of duplicating this literal "street" 3 times.(·¾ö”8›ªÒíà1
-c
-java:S1192"FDefine a constant instead of duplicating this literal "10000" 3 times.(·¾ö”8›ªÒíà1
-X	java:S125"<This block of commented-out lines of code should be removed.(¸ï¶¢8ú¡Úíà1
-G	java:S106'"+Replace this use of System.out by a logger.(»›÷8±ªÒíà1
-X	java:S125+"<This block of commented-out lines of code should be removed.(€ö”8²ªÒíà1
-F	java:S106A"+Replace this use of System.out by a logger.(á‹¾8³ªÒíà1
+]	java:S125"<This block of commented-out lines of code should be removed.(ıÎ•ÿÿÿÿÿ8êˆÆîà1
+X	java:S125"<This block of commented-out lines of code should be removed.(İ¨óğ8Ğ‹Óîà1
+X	java:S125&"<This block of commented-out lines of code should be removed.(¿­¯ô8«ûôîà1

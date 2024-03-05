@@ -16,53 +16,28 @@ public class JpaMain {
 
         try {
 
-            Member member = new Member();
-            member.setUsername("member1");
-            member.setHomeAddress(new Address("homeCity", "street", "10000"));
+//            //JPQL을 사용한 검색 쿼리
+//            List<Member> resultList = em.createQuery(
+//                    "select m from Member m where m.username like '%kim%'",
+//                    Member.class
+//            ).getResultList();
 
-            member.getFavoriteFoods().add("치킨");
-            member.getFavoriteFoods().add("족발");
-            member.getFavoriteFoods().add("피자");
-
-//            member.getAddressHistory().add(new Address("old1", "street", "10000"));
-//            member.getAddressHistory().add(new Address("old2", "street", "10000"));
-
-            member.getAddressHistory().add(new AddressEntity("old1", "street", "10000"));
-            member.getAddressHistory().add(new AddressEntity("old2", "street", "10000"));
-
-
-            em.persist(member);
-
-            em.flush();
-            em.clear();
-
-            System.out.println("===========START===========");
-
-            Member findMember = em.find(Member.class, member.getId());
-
-//            List<Address> addressHistory = findMember.getAddressHistory();
-//            for (Address address : addressHistory) {
-//                System.out.println("address = " + address.getCity());
-//            }
+//            // Criteria 사용 준비
+//            CriteriaBuilder cb = em.getCriteriaBuilder();
+//            CriteriaQuery<Member> query = cb.createQuery(Member.class);
 //
-//            Set<String> favoriteFoods = findMember.getFavoriteFoods();
-//            for (String favoriteFood : favoriteFoods) {
-//                System.out.println("favoriteFood = " + favoriteFood);
-//            }
+//            // 루트 클래스 (조회를 시작할 클래스)
+//            Root<Member> m = query.from(Member.class);
+//
+//            // 쿼리 생성
+//            CriteriaQuery<Member> cq = query.select(m).where(cb.equal(m.get("username"), "kim"));
+//            List<Member> resultList = em.createQuery(cq).getResultList();
 
-            //homeCity -> newCity
-            findMember.setHomeAddress(new Address
-                    ("newCity", findMember.getHomeAddress().getStreet(), findMember.getHomeAddress().getZipcode()));
+            // 네이티브 SQL 사용
+            // flush -> commit, query
+//            em.createNativeQuery("select MEMBER_ID, city, street, zipcode from MEMBER").getResultList();
 
-            //치킨 -> 한식
-            findMember.getFavoriteFoods().remove("치킨");
-            findMember.getFavoriteFoods().add("한식");
 
-            //old1 -> newCity1
-//            findMember.getAddressHistory().remove(new Address("old1", "street", "10000")); //equals와 hashCode를 구현하지 않으면 제대로 삭제되지 않는다.
-//            findMember.getAddressHistory().add(new Address("newCity1", "street", "10000")); //equals와 hashCode를 구현하지 않으면 중복 데이터가 들어갈 수 있다.
-
-            System.out.println("===========END===========");
 
             tx.commit(); //트랜잭션 커밋
         } catch (Exception e) { //예외 처리
